@@ -10,10 +10,8 @@ import { useState, useEffect } from "react"
 import Image from 'next/image'
 import { useTheme } from "next-themes";
 import { FloatingNav } from "@/components/ui/floating-navbar";
-import { Tabs } from "@/components/ui/tabs"
 import { Card } from "@/components/ui/card";
 import { Card as CarouselCard } from "@/components/ui/apple-cards-carousel";
-import { Card as CardHoverEffect } from "@/components/ui/card-hover-effect";
 import { CheckCircleIcon } from 'lucide-react'
 import { HoverCard } from "@/components/ui/hover-card";
 
@@ -45,105 +43,6 @@ export default function LandingPage() {
       icon: <PhoneIcon className="h-4 w-4" />,
     },
   ]
-
-  const featureTabs = [
-    {
-      title: "Pure Water",
-      value: "pure-water",
-      content: (
-        <HoverCard>
-          <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="relative w-full md:w-1/2 aspect-square">
-              <Image
-                src="/assets/pure-water.jpg"
-                alt="Pure Water"
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-            <div className="md:w-1/2 space-y-4">
-              <h3 className="text-2xl font-bold dark:text-white">99.9% Purification</h3>
-              <p className="text-gray-500 dark:text-gray-400">
-                State-of-the-art filtration technology ensures the highest quality water for your family.
-              </p>
-              <ul className="space-y-3">
-                {["99.9% purification", "Mineral-rich", "Great taste"].map((feature, i) => (
-                  <li key={i} className="flex items-center">
-                    <CheckCircleIcon className="h-5 w-5 text-green-500 mr-3" />
-                    <span className="text-gray-700 dark:text-gray-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </HoverCard>
-      )
-    },
-    {
-      title: "Home Delivery",
-      value: "home-delivery",
-      content: (
-        <HoverCard>
-          <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="relative w-full md:w-1/2 aspect-square">
-              <Image
-                src="/assets/home-delivery.jpg"
-                alt="Home Delivery"
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-            <div className="md:w-1/2 space-y-4">
-              <h3 className="text-2xl font-bold dark:text-white">Convenient Service</h3>
-              <p className="text-gray-500 dark:text-gray-400">
-                Convenient doorstep delivery brings clean water directly to your home.
-              </p>
-              <ul className="space-y-3">
-                {["Convenient", "Direct to home", "Clean water"].map((feature, i) => (
-                  <li key={i} className="flex items-center">
-                    <CheckCircleIcon className="h-5 w-5 text-green-500 mr-3" />
-                    <span className="text-gray-700 dark:text-gray-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </HoverCard>
-      )
-    },
-    {
-      title: "Sustainable",
-      value: "sustainable",
-      content: (
-        <HoverCard>
-          <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="relative w-full md:w-1/2 aspect-square">
-              <Image
-                src="/assets/sustainable-packaging.jpg"
-                alt="Sustainable"
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-            <div className="md:w-1/2 space-y-4">
-              <h3 className="text-2xl font-bold dark:text-white">Eco-Friendly Packaging</h3>
-              <p className="text-gray-500 dark:text-gray-400">
-                Eco-friendly packaging and a robust recycling program to minimize environmental impact.
-              </p>
-              <ul className="space-y-3">
-                {["Eco-friendly", "Recycling", "Minimize impact"].map((feature, i) => (
-                  <li key={i} className="flex items-center">
-                    <CheckCircleIcon className="h-5 w-5 text-green-500 mr-3" />
-                    <span className="text-gray-700 dark:text-gray-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </HoverCard>
-      )
-    }
-  ];
 
   const workflowCards = [
     {
